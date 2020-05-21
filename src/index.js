@@ -13,10 +13,13 @@ class MarkDownContainer extends React.Component {
         return(
         <div>
         <div className = "center">
-        <div className = "editor-container"> hello</div>
+            <div className = "editor-container"> 
+                <h1>Editor</h1>
+                <textarea id = "editor" rows = "15">placeholder text</textarea>
+            </div>
         </div>
         <div className = "center">
-        <div className = "preview">world</div>
+            <div className = "preview">world</div>
         </div>
         </div>
         );

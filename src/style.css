@@ -12,7 +12,7 @@ body{
 .editor-container {
     margin-top: 1.5em;
     width: 70%;
-    height: 200px;
+   
     background-color: purple;
     margin-bottom: 2em;
 }
@@ -21,6 +21,12 @@ body{
     width: 90%;
     height: 200px;
     background-color: purple;
+}
+h1 {
+    font-size: 1.2em;
+}
+#editor{
+    width: 98.8%;
 }
 
 @media only screen and (min-width: 800px) {
