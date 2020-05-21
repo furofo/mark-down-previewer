@@ -12,7 +12,12 @@ class MarkDownContainer extends React.Component {
     render() {
         return(
         <div>
-        <p>Hello World!</p>
+        <div className = "center">
+        <div className = "editor-container"> hello</div>
+        </div>
+        <div className = "center">
+        <div className = "preview">world</div>
+        </div>
         </div>
         );
     }
