@@ -5,6 +5,9 @@ import $ from "jquery";
 
 console.log('this is a test');
 
+let placeholderText = `# Welcome to my React Markdown Previewer!
+`;
+
 class MarkDownContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +18,9 @@ class MarkDownContainer extends React.Component {
         <div className = "center">
             <div className = "editor-container"> 
                 <h1>Editor</h1>
-                <textarea id = "editor" rows = "15">placeholder text</textarea>
+                <textarea id = "editor" rows = "15">
+                    {placeholderText}
+                </textarea>
             </div>
         </div>
         <div className = "center">
