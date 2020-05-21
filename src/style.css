@@ -22,3 +22,12 @@ body{
     height: 200px;
     background-color: purple;
 }
+
+@media only screen and (min-width: 800px) {
+    .editor-container{
+        width: 40%;
+    }
+    .preview{
+        width: 60%;
+    }
+}
