@@ -56,6 +56,10 @@ And here. | Okay. | I think we get it.
 class MarkDownContainer extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            input: placeholderText
+        }
     }
     componentDidMount() {
         document.getElementById('preview-code').innerHTML = marked(placeholderText);
@@ -67,7 +71,7 @@ class MarkDownContainer extends React.Component {
             <div className = "editor-container"> 
                 <h1>Editor</h1>
                 <textarea id = "editor" rows = "15">
-                    {placeholderText}
+                    {this.state.input}
                 </textarea>
             </div>
         </div>
