@@ -13,6 +13,9 @@ class MarkDownContainer extends React.Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        document.getElementById('preview-code').innerHTML = marked('# Welcome to my React Markdown Previewer!');
+    }
     render() {
         return(
         <div>
@@ -25,8 +28,8 @@ class MarkDownContainer extends React.Component {
             </div>
         </div>
         <div className = "center">
-            <div className = "preview">{marked('# Welcome to my React Markdown Previewer!')}</div>
-        </div>
+            <div className = "preview" id ="preview-code"></div>
+       </div>
         </div>
         );
     }
