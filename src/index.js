@@ -63,11 +63,20 @@ class MarkDownContainer extends React.Component {
         this.updateMessage = this.updateMessage.bind(this);
     }
 
-    updateMessage() {
-        console.log("message was updated");
+    updateMessage(event) {
+        console.log(event.target.value);
+        this.setState({
+            input: event.target.value
+        })
+        
+        
     }
     componentDidMount() {
-        document.getElementById('preview-code').innerHTML = marked(placeholderText);
+        document.getElementById('preview-code').innerHTML = marked(this.state.input);
+    }
+
+    componentDidUpdate() {
+        document.getElementById('preview-code').innerHTML = marked(this.state.input);
     }
     render() {
         return(
