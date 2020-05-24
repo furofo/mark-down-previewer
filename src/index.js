@@ -4,7 +4,7 @@ import './style.css';
 import $ from "jquery";
 import marked from 'marked';
 
-console.log('this is a test');
+
 
 let placeholderText =  `# Welcome to my React Markdown Previewer!
 
@@ -60,6 +60,11 @@ class MarkDownContainer extends React.Component {
         this.state = {
             input: placeholderText
         }
+        this.updateMessage = this.updateMessage.bind(this);
+    }
+
+    updateMessage() {
+        console.log("message was updated");
     }
     componentDidMount() {
         document.getElementById('preview-code').innerHTML = marked(placeholderText);
@@ -70,7 +75,7 @@ class MarkDownContainer extends React.Component {
         <div className = "center">
             <div className = "editor-container"> 
                 <h1>Editor</h1>
-                <textarea id = "editor" rows = "15">
+                <textarea onChange = {this.updateMessage} id = "editor" rows = "15">
                     {this.state.input}
                 </textarea>
             </div>
