@@ -5,7 +5,9 @@ import $ from "jquery";
 import marked from 'marked';
 
 
-
+marked.setOptions({
+    breaks: true
+});
 let placeholderText =  `# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
@@ -72,11 +74,11 @@ class MarkDownContainer extends React.Component {
         
     }
     componentDidMount() {
-        document.getElementById('preview-code').innerHTML = marked(this.state.input);
+        document.getElementById('preview').innerHTML = marked(this.state.input);
     }
 
     componentDidUpdate() {
-        document.getElementById('preview-code').innerHTML = marked(this.state.input);
+        document.getElementById('preview').innerHTML = marked(this.state.input);
     }
     render() {
         return(
@@ -90,7 +92,7 @@ class MarkDownContainer extends React.Component {
             </div>
         </div>
         <div className = "center">
-            <div className = "preview" id ="preview-code"></div>
+            <div id = "preview"></div>
        </div>
         </div>
         );

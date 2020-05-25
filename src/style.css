@@ -17,13 +17,11 @@ body{
     margin-bottom: 2em;
 }
 
-.preview {
-    width: 90%;
+#preview {
+    width: 85%;
     background-color: purple;
 }
-h1 {
-    font-size: 1.2em;
-}
+
 #editor{
     width: 98.8%;
 }
