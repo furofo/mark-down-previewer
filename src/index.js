@@ -85,14 +85,18 @@ class MarkDownContainer extends React.Component {
         <div>
         <div className = "center">
             <div className = "editor-container"> 
-                <h1>Editor</h1>
+                <h2 id ="editor-heading">Editor</h2>
                 <textarea onChange = {this.updateMessage} id = "editor" rows = "15">
                     {this.state.input}
                 </textarea>
             </div>
         </div>
         <div className = "center">
-            <div id = "preview"></div>
+        <h3 id = "preview-header">Preview</h3>
+        </div>
+        <div className = "center">
+            <div id = "preview">
+            </div>
        </div>
         </div>
         );
