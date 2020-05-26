@@ -24,6 +24,9 @@ body{
 #preview-header{
     width: 85%;
     background-color:  #4AA3A3;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 #editor{
@@ -31,6 +34,17 @@ body{
 }
 #editor-heading{
     background-color: #4AA3A3;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+i{
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    
 }
 
 @media only screen and (min-width: 800px) {
