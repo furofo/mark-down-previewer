@@ -53,7 +53,7 @@ And here. | Okay. | I think we get it.
 * And last but not least, let's not forget embedded images:
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)
-`
+`;
 
 class MarkDownContainer extends React.Component {
     constructor(props) {
@@ -75,6 +75,16 @@ class MarkDownContainer extends React.Component {
     }
     componentDidMount() {
         document.getElementById('preview').innerHTML = marked(this.state.input);
+        $("#preview-expander").click(function() {
+            console.log("preview expander was clicked");
+        })
+       
+        $("#editor-expander").click(function() {
+            console.log("editor expander was clicked");
+        })
+       
+        
+        
     }
 
     componentDidUpdate() {
@@ -88,7 +98,7 @@ class MarkDownContainer extends React.Component {
                 <div id = "editor-heading"> 
                 
                 <i className="fas fa-fire fa-fw">Editor</i>
-                <i id = "editor-expander" className="fas fa-arrows-alt"></i>
+              <a href ="" id = "editor-expander">  <i className="fas fa-arrows-alt"></i> </a>
                 
                 </div>
             
@@ -102,7 +112,7 @@ class MarkDownContainer extends React.Component {
         <div id = "preview-header"> 
                 
                 <i className="fas fa-fire fa-fw">Preview</i>
-                <i id = "preview-expander" class="fas fa-arrows-alt"></i>
+                <a href = "#" id = "preview-expander"><i className="fas fa-arrows-alt"></i></a>
                 
                 </div>
             
