@@ -60,9 +60,14 @@ class MarkDownContainer extends React.Component {
         super(props);
 
         this.state = {
-            input: placeholderText
+            input: placeholderText,
+            previewSwitch: true,
+            editorSwitch: true,
         }
         this.updateMessage = this.updateMessage.bind(this);
+        this.previewExpand = this.previewExpand.bind(this);
+        this.editorExpand = this.editorExpand.bind(this);
+
     }
 
     updateMessage(event) {
@@ -70,18 +75,50 @@ class MarkDownContainer extends React.Component {
         this.setState({
             input: event.target.value
         })
+
         
-        
+    }
+
+    previewExpand(){
+        if(this.state.previewSwitch){
+            $(".editor-container").hide();
+            this.setState({
+                previewSwitch: false
+            })
+        }
+
+        else {
+            $(".editor-container").show();
+            this.setState({
+                previewSwitch: true
+            })
+        }
+    }
+    editorExpand(){
+        if(this.state.editorSwitch){
+            $(".preview-container").hide();
+            $("#editor-container").css("width", "85%");
+            this.setState({
+                editorSwitch: false
+            })
+        }
+
+        else {
+            $(".preview-container").show();
+            this.setState({
+                editorSwitch: true
+            })
+        }
     }
     componentDidMount() {
         document.getElementById('preview').innerHTML = marked(this.state.input);
-        $("#preview-expander").click(function() {
-            console.log("preview expander was clicked");
-        })
+        console.log("what is this");
        
-        $("#editor-expander").click(function() {
-            console.log("editor expander was clicked");
-        })
+        
+        
+        $("#preview-expander").click(this.previewExpand);
+       
+        $("#editor-expander").click(this.editorExpand);
        
         
         
@@ -98,7 +135,7 @@ class MarkDownContainer extends React.Component {
                 <div id = "editor-heading"> 
                 
                 <i className="fas fa-fire fa-fw">Editor</i>
-              <a href ="" id = "editor-expander">  <i className="fas fa-arrows-alt"></i> </a>
+              <a href ="#" id = "editor-expander">  <i className="fas fa-arrows-alt"></i> </a>
                 
                 </div>
             
@@ -108,6 +145,7 @@ class MarkDownContainer extends React.Component {
                 </textarea>
             </div>
         </div>
+        <div className = "preview-container">
         <div className = "center">
         <div id = "preview-header"> 
                 
@@ -120,6 +158,7 @@ class MarkDownContainer extends React.Component {
         <div className = "center">
             <div id = "preview">
             </div>
+       </div>
        </div>
         </div>
         );
