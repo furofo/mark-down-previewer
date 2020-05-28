@@ -30,7 +30,8 @@ a {
     background-color:  #4AA3A3;
     display: flex;
     justify-content: space-between;
-    
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
 }
 
 #editor{
@@ -40,6 +41,8 @@ a {
     background-color: #4AA3A3;
     display: flex;
     justify-content: space-between;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
     
     
 }
