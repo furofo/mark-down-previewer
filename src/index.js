@@ -97,14 +97,17 @@ class MarkDownContainer extends React.Component {
     editorExpand(){
         if(this.state.editorSwitch){
             $(".preview-container").hide();
-            $("#editor-container").css("width", "85%");
+            $(".editor-container").css("width", "80%");
             this.setState({
                 editorSwitch: false
             })
+            $("#editor").attr("rows", "40");
         }
 
         else {
             $(".preview-container").show();
+            $(".editor-container").css("width", "80%");
+            $("#editor").attr("rows", "15");
             this.setState({
                 editorSwitch: true
             })
