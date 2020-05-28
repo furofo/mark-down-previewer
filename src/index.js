@@ -104,7 +104,10 @@ class MarkDownContainer extends React.Component {
             this.setState({
                 editorSwitch: false
             })
-            $("#editor").attr("rows", "40");
+            //$("#editor").attr("rows", "40");
+            $("#editor").animate({
+                rows: "40"
+            }, 1000);
         }
 
         else {
@@ -112,7 +115,10 @@ class MarkDownContainer extends React.Component {
             $(".editor-container").animate({
                 width: "70%",
             }, 1000);
-            $("#editor").attr("rows", "15");
+            //$("#editor").attr("rows", "15");
+            $("#editor").animate({
+                rows: "15"
+            }, 1000);
             this.setState({
                 editorSwitch: true
             })
