@@ -88,7 +88,7 @@ class MarkDownContainer extends React.Component {
                 <div id = "editor-heading"> 
                 
                 <i className="fas fa-fire fa-fw">Editor</i>
-                <i className="fas fa-arrows-alt"></i>
+                <i id = "editor-expander" className="fas fa-arrows-alt"></i>
                 
                 </div>
             
@@ -102,7 +102,7 @@ class MarkDownContainer extends React.Component {
         <div id = "preview-header"> 
                 
                 <i className="fas fa-fire fa-fw">Preview</i>
-                <i class="fas fa-arrows-alt"></i>
+                <i id = "preview-expander" class="fas fa-arrows-alt"></i>
                 
                 </div>
             
