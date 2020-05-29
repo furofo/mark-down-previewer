@@ -21,7 +21,8 @@ const reducer = (state = 5) => {
   // Define the store here:
 let store = createStore(reducer);
 
-
+console.log('this is store state');
+console.log(store.getState());
 
 
 marked.setOptions({
