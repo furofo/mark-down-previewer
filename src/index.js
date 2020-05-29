@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { render } from 'react-dom'
 import './style.css';
 import $ from "jquery";
 import marked from 'marked';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux';
+
+
+
+
+const reducer = (state = 5) => {
+    return state;
+  }
+  
+  // Redux methods are available from a Redux object
+  // For example: Redux.createStore()
+  // Define the store here:
+ // let store = Redux.createStore(reducer);
+
+
 
 
 marked.setOptions({
@@ -180,4 +199,16 @@ class MarkDownContainer extends React.Component {
 
 }
 
-ReactDom.render(<MarkDownContainer />, document.getElementById('root'));
+class ActualMarkdown extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+       return(
+ <MarkDownContainer />
+       );
+    }
+    
+}
+
+ReactDom.render(<ActualMarkdown />, document.getElementById('root'));
