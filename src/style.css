@@ -62,6 +62,10 @@ i{
     padding: 10px;
 }
 
+a:hover {
+    color: lightblue;
+}
+
 @media only screen and (min-width: 800px) {
     .editor-container{
         width: 40%;
