@@ -19,7 +19,7 @@ const reducer = (state = 5) => {
   // Redux methods are available from a Redux object
   // For example: Redux.createStore()
   // Define the store here:
- // let store = Redux.createStore(reducer);
+let store = createStore(reducer);
 
 
 
