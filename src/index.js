@@ -12,18 +12,45 @@ import { createStore } from 'redux';
 
 
 
-const reducer = (state = 5) => {
+const reducer = (state = {input: 'hello', previewSwitch: true, editorSwitch: true,}, action) => {
+    if(action.type == "message"){
+        return {
+            message: action.input
+        }
+    }
+
+    else {
     return state;
+    }
   }
   
-  // Redux methods are available from a Redux object
-  // For example: Redux.createStore()
-  // Define the store here:
+  // three things in react state right input, preview switch, and editor switch
+
+
+//Redux Logic
+
 let store = createStore(reducer);
 
 console.log('this is store state');
 console.log(store.getState());
 
+
+
+
+const loginAction = (message) => {
+    return {
+      type: 'message',
+      input: message,
+    }
+  };
+
+  store.dispatch(loginAction("hello there world"));
+  console.log('this is store state now');
+console.log(store.getState());
+
+
+
+//mark up special flags
 
 marked.setOptions({
     breaks: true
