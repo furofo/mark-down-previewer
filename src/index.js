@@ -86,7 +86,28 @@ const loginAction = function (message) {
     console.log(store.getState());
 
   
+const mapStateToProps = (state) => {
+        return {
+          input: state.input,
+          previewSwitch: state.previewSwitch,
+          editorSwitch: state.editorSwitch,
+        }
+      };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loginAction: (message) => {
+            dispatch(loginAction(message));
+        },
+        previewToggle: () => {
+            dispatch(previewToggle());
+        },
+        editorToggle: () => {
+            dispatch(editorToggle());
+        }
+    }
+}
+      
 
 
 
