@@ -12,12 +12,31 @@ import { createStore } from 'redux';
 
 
 
-const reducer = (state = {input: 'hello', previewSwitch: true, editorSwitch: true,}, action) => {
+const reducer =  function (state = {input: 'hello', previewSwitch: true, editorSwitch: true,}, action)  {
     if(action.type == "message"){
+        console.log('what is thes');
+        console.log(this);
         return {
-            message: action.input
+            input: action.input,
+            previewSwitch: state.previewSwitch,
+            editorSwitch: state.editorSwitch,
         }
     }
+    else if (action.type == "previewToggle") {
+        return {
+            input: state.input,
+            previewSwitch: !state.previewSwitch,
+            editorSwitch: state.editorSwitch,
+        }
+    }
+    else if (action.type == "editorToggle") {
+        return {
+            input: state.input,
+            previewSwitch: state.previewSwitch,
+            editorSwitch: !state.editorSwitch,
+        }
+    }
+
 
     else {
     return state;
@@ -37,16 +56,37 @@ console.log(store.getState());
 
 
 
-const loginAction = (message) => {
+const loginAction = function (message) {
     return {
       type: 'message',
       input: message,
     }
   };
+  const previewToggle = () => {
+    return {
+      type: 'previewToggle',
+     
+    }
+  };
+  const editorToggle = () => {
+    return {
+      type: 'editorToggle',
+    }
+  };
+  
+    store.dispatch(loginAction("hello there world"));
+    console.log('this is store state now');
+      
+    console.log(store.getState());
+    console.log("anddd now");
+    store.dispatch(previewToggle());
+    console.log(store.getState());
+    console.log("anddd finally");
+    store.dispatch(editorToggle());
+    console.log(store.getState());
 
-  store.dispatch(loginAction("hello there world"));
-  console.log('this is store state now');
-console.log(store.getState());
+  
+
 
 
 
