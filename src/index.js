@@ -177,7 +177,7 @@ class MarkDownContainer extends React.Component {
     }
 
     updateMessage(event) {
-        console.log(event.target.value);
+        
         this.setState({
             input: event.target.value
         })
@@ -186,30 +186,25 @@ class MarkDownContainer extends React.Component {
     }
 
     previewExpand(){
-        if(this.state.previewSwitch){
+    
+        if(this.props.previewSwitch){
             $(".editor-container").hide("slow", function(){});
-            this.setState({
-                previewSwitch: false
-            })
+            this.props.previewToggle();
         }
 
         else {
             $(".editor-container").show("slow", function(){});
-            this.setState({
-                previewSwitch: true
-            })
+            this.props.previewToggle();
         }
     }
     editorExpand(){
-        if(this.state.editorSwitch){
+        if(this.props.editorSwitch){
             $(".preview-container").hide("slow", function(){});
             $(".editor-container").animate({
                 width: "80%",
             }, 1000);
             
-            this.setState({
-                editorSwitch: false
-            })
+            this.props.editorToggle();
             //$("#editor").attr("rows", "40");
             $("#editor").animate({
                 rows: "40"
@@ -225,9 +220,7 @@ class MarkDownContainer extends React.Component {
             $("#editor").animate({
                 rows: "15"
             }, 1000);
-            this.setState({
-                editorSwitch: true
-            })
+            this.props.editorToggle();
         }
     }
     componentDidMount() {
