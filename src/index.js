@@ -286,7 +286,7 @@ class MarkDownContainer extends React.Component {
 
 }
 
-
+//React Redux
 
 const Container = connect(mapStateToProps,mapDispatchToProps)(MarkDownContainer)
 
@@ -297,7 +297,7 @@ class ActualMarkdown extends React.Component {
     render() {
        return(
            <Provider store = {store}>
-               <MarkDownContainer />
+               <Container />
            </Provider>
        );
     }
