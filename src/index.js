@@ -14,8 +14,6 @@ import { createStore } from 'redux';
 
 const reducer =  function (state = {input: 'hello', previewSwitch: true, editorSwitch: true,}, action)  {
     if(action.type == "message"){
-        console.log('what is thes');
-        console.log(this);
         return {
             input: action.input,
             previewSwitch: state.previewSwitch,
@@ -288,13 +286,19 @@ class MarkDownContainer extends React.Component {
 
 }
 
+
+
+const Container = connect(mapStateToProps,mapDispatchToProps)(MarkDownContainer)
+
 class ActualMarkdown extends React.Component {
     constructor(props){
         super(props);
     }
     render() {
        return(
- <MarkDownContainer />
+           <Provider store = {store}>
+               <MarkDownContainer />
+           </Provider>
        );
     }
     
